@@ -42,44 +42,45 @@ else:
 
 LOG = logging.getLogger("whispr-flow")
 COMMANDS = {"start", "stop", "toggle", "status", "quit"}
-# DEFAULT_MODEL = "mistralai/voxtral-small-24b-2507"
 DEFAULT_MODEL = "google/gemini-3.1-flash-lite"
-# DEFAULT_MODEL = "google/gemma-4-31b-it"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 OPENROUTER_MODELS_URL = "https://openrouter.ai/api/v1/models"
 
-""" TRANSCRIPTION_SYSTEM_INSTRUCTION =
-Transcribe the attached speech audio into polished text.
+# v1
+# TRANSCRIPTION_SYSTEM_INSTRUCTION = """
+# Transcribe the attached speech audio into polished text.
+#
+# Rules:
+# - Output only the final transcript, with no labels, commentary, Markdown, or quotes.
+# - Preserve the speaker's meaning and natural wording.
+# - Remove false starts, repeated stutters, filler sounds, and accidental duplicated words.
+# - Correct obvious speech-recognition errors, typos, and misspellings.
+# - Keep punctuation and capitalization suitable for direct insertion into a chat, document, or editor.
+# - If the speaker explicitly says punctuation or formatting, apply it naturally.
+# - Do not invent or infer content that is not clearly spoken in the audio.
+# - If the audio is silence, music, a tone, noise, or otherwise has no clearly intelligible human speech, output nothing.
+# - When user says "X emoji/emoticon", make an emoji/emoticon of X.
+# """
 
-Rules:
-- Output only the final transcript, with no labels, commentary, Markdown, or quotes.
-- Preserve the speaker's meaning and natural wording.
-- Remove false starts, repeated stutters, filler sounds, and accidental duplicated words.
-- Correct obvious speech-recognition errors, typos, and misspellings.
-- Keep punctuation and capitalization suitable for direct insertion into a chat, document, or editor.
-- If the speaker explicitly says punctuation or formatting, apply it naturally.
-- Do not invent or infer content that is not clearly spoken in the audio.
-- If the audio is silence, music, a tone, noise, or otherwise has no clearly intelligible human speech, output nothing.
-- When user says "X emoji/emoticon", make an emoji/emoticon of X.
-""".strip()
-
-"""TRANSCRIPTION_SYSTEM_INSTRUCTION =
-Process the provided dictation transcript into clean, naturally reading written prose.
-
-Execution Rules:
-- Translate intent: Do not transcribe disjointed speech verbatim. Rephrase awkward or rambling spoken thoughts into clear, cohesive sentences.
-- Fix errors: Automatically correct grammar, syntax, and misspoken words.
-- Clean up: Strip out all filler words, stutters, false starts, and redundancies.
-- Format properly: Apply standard punctuation and capitalization.
-- Handle commands: Execute spoken formatting (e.g., "new paragraph") and emojis (e.g., "thumbs up emoji") seamlessly.
-
-Output Constraints:
-- Output strictly the final polished text.
-- No markdown formatting, no preambles, no conversational filler.
-- If the input lacks intelligible human speech, output absolutely nothing.
-"""
+# v2
+# TRANSCRIPTION_SYSTEM_INSTRUCTION = """
+# Process the provided dictation transcript into clean, naturally reading written prose.
+#
+# Execution Rules:
+# - Translate intent: Do not transcribe disjointed speech verbatim. Rephrase awkward or rambling spoken thoughts into clear, cohesive sentences.
+# - Fix errors: Automatically correct grammar, syntax, and misspoken words.
+# - Clean up: Strip out all filler words, stutters, false starts, and redundancies.
+# - Format properly: Apply standard punctuation and capitalization.
+# - Handle commands: Execute spoken formatting (e.g., "new paragraph") and emojis (e.g., "thumbs up emoji") seamlessly.
+#
+# Output Constraints:
+# - Output strictly the final polished text.
+# - No markdown formatting, no preambles, no conversational filler.
+# - If the input lacks intelligible human speech, output absolutely nothing.
+# """
 
 
+# v3
 TRANSCRIPTION_SYSTEM_INSTRUCTION = """
 Process the provided audio dictation into clean, naturally reading written prose.
 

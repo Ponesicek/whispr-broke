@@ -43,21 +43,21 @@ Then bind key press to `start` and key release to `stop` in your compositor.
 Hyprland example:
 
 ```ini
-bind = SUPER, G, exec, /home/ponesicek/Projects/whispr/.venv/bin/whispr-flow --command start
-bindr = SUPER, G, exec, /home/ponesicek/Projects/whispr/.venv/bin/whispr-flow --command stop
+bind = SUPER, G, exec, /home/user/Projects/whispr/.venv/bin/whispr-flow --command start
+bindr = SUPER, G, exec, /home/user/Projects/whispr/.venv/bin/whispr-flow --command stop
 ```
 
 Sway example:
 
 ```ini
-bindsym --to-code $mod+g exec /home/ponesicek/Projects/whispr/.venv/bin/whispr-flow --command start
-bindsym --release --to-code $mod+g exec /home/ponesicek/Projects/whispr/.venv/bin/whispr-flow --command stop
+bindsym --to-code $mod+g exec /home/user/Projects/whispr/.venv/bin/whispr-flow --command start
+bindsym --release --to-code $mod+g exec /home/user/Projects/whispr/.venv/bin/whispr-flow --command stop
 ```
 
 If your compositor only supports a single shortcut action, use toggle mode:
 
 ```bash
-/home/ponesicek/Projects/whispr/.venv/bin/whispr-flow --command toggle
+/home/user/Projects/whispr/.venv/bin/whispr-flow --command toggle
 ```
 
 On X11, the built-in global hotkey listener can still be used:
