@@ -1,0 +1,6 @@
+.env
+.uv-cache
+.venv
+whispr-flow-test.sock.commands
+whispr-flow-test.sock.state
+whispr_flow/__pycache__

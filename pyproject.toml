@@ -1,0 +1,19 @@
+[project]
+name = "whispr-flow"
+version = "0.1.0"
+description = "Hold Super+G to record speech, transcribe it with OpenRouter Voxtral, and insert the cleaned text."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26.0",
+  "pyperclip>=1.8.2",
+  "pynput>=1.7.6",
+  "sounddevice>=0.4.6",
+]
+
+[project.scripts]
+whispr-flow = "whispr_flow.app:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
