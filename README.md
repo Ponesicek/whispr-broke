@@ -16,13 +16,13 @@ Optional environment variables:
 
 ```bash
 export OPENROUTER_API_KEY="..."
-export WHISPR_MODEL="mistralai/voxtral-small-24b-2507"
+export WHISPR_MODEL="google/gemini-3.1-flash-lite"
 export WHISPR_SAMPLE_RATE=16000
 export WHISPR_MIN_SECONDS=0.35
 export WHISPR_INSERT_MODE=clipboard
 ```
 
-`WHISPR_MODEL` can also be provided as `OPENROUTER_MODEL`. If none are set, the app defaults to `mistralai/voxtral-small-24b-2507`.
+`WHISPR_MODEL` can also be provided as `OPENROUTER_MODEL`. If none are set, the app defaults to `google/gemini-3.1-flash-lite`.
 
 To see the models available to your key:
 
